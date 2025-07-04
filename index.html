@@ -17,22 +17,21 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #000000;
     }
 
-.product-image {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
+    .product-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-.product-image img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
+    .product-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
 
     .pricing {
       text-align: center;
@@ -60,24 +59,55 @@
       margin-top: 20px;
     }
 
-    .buy-button button {
+    .cta-btn {
       background-color: #f74911;
       color: white;
+      padding: 20px 30px;
       font-size: 1.2rem;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      font-family: 'Montserrat', sans-serif;
+      animation: pulse 2s infinite;
     }
 
-    .buy-button button:hover {
+    .cta-btn:hover {
       background-color: #e0410f;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .whatsapp-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(4, 131, 60, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(4, 131, 60, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(4, 131, 60, 0);
+      }
     }
 
     .product-video {
       margin-top: 40px;
       text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .product-video h2 {
@@ -85,9 +115,20 @@
       margin-bottom: 15px;
     }
 
-    .product-video img {
+    .product-video video {
       max-width: 100%;
       border-radius: 12px;
+    }
+
+    .product-description {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     @media (max-width: 480px) {
@@ -99,52 +140,17 @@
         font-size: 1.6rem;
       }
 
-        .cta-btn {
-            background-color: #f74911;
-            color: white;
-            padding: 25px 50px;
-            font-size: 24px;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-            font-family: 'Montserrat', sans-serif;
+      .cta-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 15px;
+      }
 
-            /* Animación pulse */
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(4, 131, 60, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 20px rgba(4, 131, 60, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(4, 131, 60, 0);
-            }
-        }
-
-
-        .cta-btn:hover {
-            background-color: #f74911;
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .whatsapp-icon {
-            width: 40px;
-            height: 40px;
-        }
-    
+      .whatsapp-icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -154,7 +160,7 @@
 
   <!-- IMAGEN DEL PRODUCTO -->
   <div class="product-image">
-    <img src="TVBOX1.JPG" alt="Vaso Térmico Digital" />
+    <img src="TVBOX1.JPG" alt="TV Box Android" />
   </div>
 
   <!-- PRECIO -->
@@ -164,38 +170,36 @@
   </div>
 
   <!-- BOTÓN DE WHATSAPP -->
-        <a href="https://wa.me/5214424389210?text=Hola%20quiero%20mi%20usuario%20y%20mi%20bono%20de%20bienvenida" class="cta-btn">
-            <span>COMPRA POR WHATSAPP</span>
-            <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-        </a>
+  <div class="buy-button">
+    <a href="https://wa.me/5214424389210?text=Hola%20quiero%20mi%20usuario%20y%20mi%20bono%20de%20bienvenida" class="cta-btn">
+      <span>COMPRA POR WHATSAPP</span>
+      <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+  </div>
 
+  <!-- VIDEO Y DESCRIPCIÓN -->
+  <div class="product-video">
+    <h2>Mirá cómo funciona:</h2>
+    <video autoplay muted loop playsinline>
+      <source src="videopla.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
 
-<div class="product-video">
-  <h2>Mirá cómo funciona:</h2>
-  <video autoplay muted loop playsinline style="max-width: 100%; border-radius: 12px;">
-    <source src="videopla.mp4" type="video/mp4" />
-    Tu navegador no soporta el video.
-  </video>
-</div>
+    <p class="product-description">
+      ¿Tenés una tele vieja o querés más contenido sin pagar de más?<br/>
+      Con esta <strong>TV Box Android</strong>, transformás cualquier pantalla en un centro de entretenimiento completo.<br/><br/>
+      Instalás apps como <em>YouTube, Netflix, Disney+, Flow, Kodi, IPTV</em> y más.<br/>
+      Solo conectala por HDMI, agregá WiFi y listo: cine, series y partidos en segundos.
+      <br/><br/>
+      ✅ Android (última versión)<br/>
+      ✅ 2GB / 4GB de RAM – Rápida y fluida<br/>
+      ✅ Control remoto incluido<br/>
+      ✅ WiFi, Bluetooth y puerto USB<br/>
+      ✅ Soporta 4K / HD<br/>
+      ✅ Fácil instalación – ¡enchufás y usás!<br/><br/>
+      🎬 Tu TV, ahora sí, inteligente.
+    </p>
+  </div>
 
-  <p style="margin-top: 15px; font-size: 1rem; color: #ccc; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
-    ¿Tenés una tele vieja o querés más contenido sin pagar de más? Con esta&nbsp;TV Box Android, transformás cualquier pantalla en un centro de entretenimiento completo.
-
-Instalás apps como YouTube, Netflix, Disney+, Flow, Kodi, IPTV y más. Solo conectala por HDMI, agregá WiFi y listo: cine, series y partidos en segundos.
-
-✅ Android (última versión)
-✅ 2GB / 4GB de RAM – Rápida y fluida
-✅ Control remoto incluido
-✅ WiFi, Bluetooth y puerto USB
-✅ Soporta 4K / HD
-✅ Fácil instalación – ¡enchufás y usás!
-
-Ideal para ver todo lo que te gusta, sin depender del cable.
-
-🎬 Tu TV, ahora sí, inteligente.
-  </p>
-
-  
-</div>
 </body>
 </html>
