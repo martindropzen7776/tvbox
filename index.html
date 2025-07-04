@@ -59,22 +59,25 @@
       margin-top: 20px;
     }
 
-    .cta-btn {
-      background-color: #075E54;
-      color: white;
-      padding: 20px 30px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      border-radius: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-      font-family: 'Montserrat', sans-serif;
-      animation: pulse 2s infinite;
-    }
+.cta-btn {
+  background-color: #075E54;
+  color: white;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex; /* CAMBIO: de inline-flex a flex */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  animation: pulse 2s infinite;
+  margin: 0 auto; /* CENTRADO GARANTIZADO */
+  width: fit-content; /* Opcional para no ocupar más de lo necesario */
+}
+
 
     .cta-btn:hover {
       background-color: #075E54;
