@@ -20,13 +20,19 @@
       color: #ffffff;
     }
 
-    .product-image img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
+.product-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.product-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
 
     .pricing {
       text-align: center;
