@@ -149,9 +149,30 @@
         height: 22px;
       }
     }
+
+   .top-timer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f74911;
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+ 
   </style>
 </head>
 <body>
+
+  <div class="top-timer">
+  🔥 ¡50% OFF solo por tiempo limitado! Termina en <span id="countdown">--:--:--</span>
+</div>
 
   <!-- TÍTULO -->
   <h1 class="hero-title">¡TV Box Android – Convertí cualquier TV en una Smart con 50% OFF!</h1>
@@ -199,5 +220,28 @@
     </p>
   </div>
 
+<script>
+  // Set time 12 hours ahead
+  const countdownTarget = new Date().getTime() + 12 * 60 * 60 * 1000;
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownTarget - now;
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("countdown").innerHTML = "00:00:00";
+    }
+  }, 1000);
+</script>
+
+  
 </body>
 </html>
