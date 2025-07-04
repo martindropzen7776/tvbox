@@ -99,10 +99,52 @@
         font-size: 1.6rem;
       }
 
-      .buy-button button {
-        width: 100%;
-      }
-    }
+        .cta-btn {
+            background-color: #f74911;
+            color: white;
+            padding: 25px 50px;
+            font-size: 24px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-family: 'Montserrat', sans-serif;
+
+            /* Animación pulse */
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(4, 131, 60, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(4, 131, 60, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(4, 131, 60, 0);
+            }
+        }
+
+
+        .cta-btn:hover {
+            background-color: #f74911;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 40px;
+            height: 40px;
+        }
+    
   </style>
 </head>
 <body>
@@ -122,11 +164,11 @@
   </div>
 
   <!-- BOTÓN DE WHATSAPP -->
-  <div class="buy-button">
-    <a href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20quiero%20comprar%20el%20vaso%20digital%20con%20descuento" target="_blank">
-      <button>Comprar por WhatsApp</button>
-    </a>
-  </div>
+        <a href="https://wa.me/5214424389210?text=Hola%20quiero%20mi%20usuario%20y%20mi%20bono%20de%20bienvenida" class="cta-btn">
+            <span>COMPRA POR WHATSAPP</span>
+            <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+        </a>
+
 
 <div class="product-video">
   <h2>Mirá cómo funciona:</h2>
